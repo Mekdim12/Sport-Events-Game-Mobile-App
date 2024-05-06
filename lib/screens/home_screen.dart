@@ -1,6 +1,5 @@
 import 'dart:ffi';
 
-
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
@@ -43,8 +42,20 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                   fit: BoxFit.cover,
                 ),
               ),
-              child: Row(
-                children: [Text("data")],
+              child: const Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Text(
+                    "EUQUESTIONS",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 25,
+                      fontWeight: FontWeight.bold,
+                      
+                    ),
+                  ),
+                ],
               ),
             ),
           ),
@@ -59,11 +70,11 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                         borderRadius: BorderRadius.all(Radius.circular(12))),
                     height: 102,
                     margin: const EdgeInsets.symmetric(horizontal: 15),
-                    child: Center(
+                    child: const Center(
                       child: Text(
-                        "History of the event",
+                        "HISTORY OF THE EVENT",
                         style: TextStyle(
-                            color: Color.fromARGB(98, 0, 37, 76),
+                            color: Color.fromARGB(246, 0, 37, 76),
                             fontSize: 20,
                             fontWeight: FontWeight.bold),
                       ),
@@ -78,11 +89,11 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                         borderRadius: BorderRadius.all(Radius.circular(12))),
                     height: 102,
                     margin: const EdgeInsets.symmetric(horizontal: 15),
-                    child: Center(
+                    child: const Center(
                       child: Text(
-                        "Amazing Facts",
+                        "AMAZING FACTS",
                         style: TextStyle(
-                            color: Color.fromARGB(98, 0, 37, 76),
+                            color: Color.fromARGB(246, 0, 37, 76),
                             fontSize: 20,
                             fontWeight: FontWeight.bold),
                       ),
@@ -97,11 +108,11 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                         borderRadius: BorderRadius.all(Radius.circular(12))),
                     height: 102,
                     margin: const EdgeInsets.symmetric(horizontal: 15),
-                    child: Center(
+                    child: const Center(
                       child: Text(
                         "PARTICIPANTS",
                         style: TextStyle(
-                            color: Color.fromARGB(98, 0, 37, 76),
+                            color: Color.fromARGB(246, 0, 37, 76),
                             fontSize: 20,
                             fontWeight: FontWeight.bold),
                       ),
@@ -116,17 +127,17 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                         borderRadius: BorderRadius.all(Radius.circular(12))),
                     height: 102,
                     margin: const EdgeInsets.symmetric(horizontal: 15),
-                    child: Center(
+                    child: const Center(
                       child: Text(
-                        "Calander",
+                        "CALENDAR",
                         style: TextStyle(
-                            color: Color.fromARGB(98, 0, 37, 76),
+                            color: Color.fromARGB(246, 0, 37, 76),
                             fontSize: 20,
                             fontWeight: FontWeight.bold),
                       ),
                     ),
                   ),
-                   Container(
+                  Container(
                     margin: EdgeInsets.symmetric(vertical: 5),
                   ),
                   Container(
@@ -135,46 +146,53 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                         borderRadius: BorderRadius.all(Radius.circular(12))),
                     height: 102,
                     margin: const EdgeInsets.symmetric(horizontal: 15),
-                    child: Center(
+                    child: const Center(
                       child: Text(
-                        "Quiz",
+                        "QUIZ",
                         style: TextStyle(
-                            color: Color.fromARGB(98, 0, 37, 76),
+                            color: Color.fromARGB(246, 0, 37, 76),
                             fontSize: 20,
                             fontWeight: FontWeight.bold),
                       ),
                     ),
                   ),
-                   Container(
+                  Container(
                     margin: EdgeInsets.symmetric(vertical: 5),
                   ),
                   Container(
                     decoration: BoxDecoration(
-                        color: isSoundOn? Color.fromARGB(246, 0, 37, 76):Colors.white,
-                        borderRadius: const BorderRadius.all(Radius.circular(12))),
+                        color: isSoundOn
+                            ? Color.fromARGB(246, 0, 37, 76)
+                            : Colors.white,
+                        borderRadius:
+                            const BorderRadius.all(Radius.circular(12))),
                     height: 56,
                     margin: const EdgeInsets.symmetric(horizontal: 15),
                     child: Center(
                       child: ElevatedButton(
-                        
                         style: ButtonStyle(
-                          backgroundColor: MaterialStatePropertyAll(
-                          isSoundOn?  Color.fromARGB(246, 0, 37, 76):Colors.white,
-                          )
-                        ),
-                        onPressed: (){
+                            elevation: MaterialStatePropertyAll(0.0),
+                            backgroundColor: MaterialStatePropertyAll(
+                              isSoundOn
+                                  ? Color.fromARGB(246, 0, 37, 76)
+                                  : Colors.white,
+                            )),
+                        onPressed: () {
                           isSoundOn = !isSoundOn;
                           setState(() {
                             isSoundOn;
                           });
                         },
-                        child:  Text(
-                        "SOUNDS OFF",
-                        style: TextStyle(
-                            color: isSoundOn? Colors.white : Color.fromARGB(246, 0, 37, 76),
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold),
-                      ),),
+                        child: Text(
+                          "SOUNDS OFF",
+                          style: TextStyle(
+                              color: isSoundOn
+                                  ? Colors.white
+                                  : Color.fromARGB(246, 0, 37, 76),
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold),
+                        ),
+                      ),
                     ),
                   ),
                 ],
