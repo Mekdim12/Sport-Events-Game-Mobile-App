@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../components/nav_bar_header_label_only.dart';
 
 class HomePageWidget extends StatefulWidget {
   const HomePageWidget({super.key});
@@ -27,34 +28,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
               ),
             ),
           ),
-          Positioned(
-            top: 0,
-            left: 0,
-            child: Container(
-              width: screenWidth,
-              height: 90,
-              decoration: const BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage('assets/images/nav_bar_image.png'),
-                  fit: BoxFit.cover,
-                ),
-              ),
-              child: const Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Text(
-                    "EUQUESTIONS",
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 25,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ),
+          const HeaderWidgetLabelOnly('EUQuestions'),
           Padding(
             padding: const EdgeInsets.only(top: 130),
             child: SingleChildScrollView(
