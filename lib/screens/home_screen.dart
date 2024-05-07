@@ -60,19 +60,27 @@ class _HomePageWidgetState extends State<HomePageWidget> {
             child: SingleChildScrollView(
               child: Column(
                 children: [
-                  Container(
-                    decoration: const BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.all(Radius.circular(12))),
-                    height: 102,
-                    margin: const EdgeInsets.symmetric(horizontal: 15),
-                    child: const Center(
-                      child: Text(
-                        "HISTORY OF THE EVENT",
-                        style: TextStyle(
-                            color: Color.fromARGB(246, 0, 37, 76),
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold),
+                  GestureDetector(
+                    onTap: () {
+                      isSoundOn = !isSoundOn;
+                      setState(() {
+                        isSoundOn;
+                      });
+                    },
+                    child: Container(
+                      decoration: const BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.all(Radius.circular(12))),
+                      height: 102,
+                      margin: const EdgeInsets.symmetric(horizontal: 15),
+                      child: const Center(
+                        child: Text(
+                          "HISTORY OF THE EVENT",
+                          style: TextStyle(
+                              color: Color.fromARGB(246, 0, 37, 76),
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold),
+                        ),
                       ),
                     ),
                   ),
@@ -80,7 +88,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                     margin: EdgeInsets.symmetric(vertical: 5),
                   ),
                   GestureDetector(
-                    onTap: (){
+                    onTap: () {
                       isSoundOn = !isSoundOn;
                       setState(() {
                         isSoundOn;
@@ -106,87 +114,103 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                   Container(
                     margin: EdgeInsets.symmetric(vertical: 5),
                   ),
-                  Container(
-                    decoration: const BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.all(Radius.circular(12))),
-                    height: 102,
-                    margin: const EdgeInsets.symmetric(horizontal: 15),
-                    child: const Center(
-                      child: Text(
-                        "PARTICIPANTS",
-                        style: TextStyle(
-                            color: Color.fromARGB(246, 0, 37, 76),
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold),
+                  GestureDetector(
+                    onTap: () {
+                      isSoundOn = !isSoundOn;
+                      setState(() {
+                        isSoundOn;
+                      });
+                    },
+                    child: Container(
+                      decoration: const BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.all(Radius.circular(12))),
+                      height: 102,
+                      margin: const EdgeInsets.symmetric(horizontal: 15),
+                      child: const Center(
+                        child: Text(
+                          "PARTICIPANTS",
+                          style: TextStyle(
+                              color: Color.fromARGB(246, 0, 37, 76),
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold),
+                        ),
                       ),
                     ),
                   ),
                   Container(
                     margin: EdgeInsets.symmetric(vertical: 5),
                   ),
-                  Container(
-                    decoration: const BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.all(Radius.circular(12))),
-                    height: 102,
-                    margin: const EdgeInsets.symmetric(horizontal: 15),
-                    child: const Center(
-                      child: Text(
-                        "CALENDAR",
-                        style: TextStyle(
-                            color: Color.fromARGB(246, 0, 37, 76),
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold),
+                  GestureDetector(
+                    onTap: () {
+                      isSoundOn = !isSoundOn;
+                      setState(() {
+                        isSoundOn;
+                      });
+                    },
+                    child: Container(
+                      decoration: const BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.all(Radius.circular(12))),
+                      height: 102,
+                      margin: const EdgeInsets.symmetric(horizontal: 15),
+                      child: const Center(
+                        child: Text(
+                          "CALENDAR",
+                          style: TextStyle(
+                              color: Color.fromARGB(246, 0, 37, 76),
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold),
+                        ),
                       ),
                     ),
                   ),
                   Container(
                     margin: EdgeInsets.symmetric(vertical: 5),
                   ),
-                  Container(
-                    decoration: const BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.all(Radius.circular(12))),
-                    height: 102,
-                    margin: const EdgeInsets.symmetric(horizontal: 15),
-                    child: const Center(
-                      child: Text(
-                        "QUIZ",
-                        style: TextStyle(
-                            color: Color.fromARGB(246, 0, 37, 76),
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold),
+                  GestureDetector(
+                    onTap: () {
+                      isSoundOn = !isSoundOn;
+                      setState(() {
+                        isSoundOn;
+                      });
+                    },
+                    child: Container(
+                      decoration: const BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.all(Radius.circular(12))),
+                      height: 102,
+                      margin: const EdgeInsets.symmetric(horizontal: 15),
+                      child: const Center(
+                        child: Text(
+                          "QUIZ",
+                          style: TextStyle(
+                              color: Color.fromARGB(246, 0, 37, 76),
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold),
+                        ),
                       ),
                     ),
                   ),
                   Container(
                     margin: EdgeInsets.symmetric(vertical: 5),
                   ),
-                  Container(
-                    decoration: BoxDecoration(
-                        color: isSoundOn
-                            ? Color.fromARGB(246, 0, 37, 76)
-                            : Colors.white,
-                        borderRadius:
-                            const BorderRadius.all(Radius.circular(12))),
-                    height: 56,
-                    margin: const EdgeInsets.symmetric(horizontal: 15),
-                    child: Center(
-                      child: ElevatedButton(
-                        style: ButtonStyle(
-                            elevation: MaterialStatePropertyAll(0.0),
-                            backgroundColor: MaterialStatePropertyAll(
-                              isSoundOn
-                                  ? Color.fromARGB(246, 0, 37, 76)
-                                  : Colors.white,
-                            )),
-                        onPressed: () {
-                          isSoundOn = !isSoundOn;
-                          setState(() {
-                            isSoundOn;
-                          });
-                        },
+                  GestureDetector(
+                    onTap: () {
+                      isSoundOn = !isSoundOn;
+                      setState(() {
+                        isSoundOn;
+                      });
+                    },
+                    child: Container(
+                      decoration: BoxDecoration(
+                          color: isSoundOn
+                              ? Color.fromARGB(246, 0, 37, 76)
+                              : Colors.white,
+                          borderRadius: BorderRadius.all(Radius.circular(12))),
+                      height: 56,
+                      margin: const EdgeInsets.symmetric(horizontal: 15),
+                      child: Center(
                         child: Text(
                           "SOUNDS OFF",
                           style: TextStyle(
@@ -199,6 +223,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                       ),
                     ),
                   ),
+                  
                 ],
               ),
             ),
