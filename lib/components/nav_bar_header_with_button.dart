@@ -42,7 +42,7 @@ class HeaderWidgetWithButton extends StatelessWidget {
                 ),
               ),
             ),
-            const SizedBox(width: 35),
+             SizedBox(width: screenWidth * 0.15),
             Expanded(
               child: Text(
                 pageTitle, // use pageTitle directly
