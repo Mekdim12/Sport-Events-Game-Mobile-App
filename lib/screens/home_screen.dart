@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../components/nav_bar_header_label_only.dart';
 import '../screens/history_screen.dart';
+import '../screens/amazing_facts.dart';
 class HomePageWidget extends StatefulWidget {
   const HomePageWidget({super.key});
 
@@ -64,10 +65,10 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                   ),
                   GestureDetector(
                     onTap: () {
-                      isSoundOn = !isSoundOn;
-                      setState(() {
-                        isSoundOn;
-                      });
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => const AmazingFactsWidget()),
+                      );
                     },
                     child: Container(
                       decoration: const BoxDecoration(
