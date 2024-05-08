@@ -40,28 +40,25 @@ class _CustomTableLabelState extends State<CustomTableLabel> {
   @override
   Widget build(BuildContext context) {
     return Container(
-
-      padding: EdgeInsets.all(widget.content['padding']),
-      decoration: BoxDecoration(
-         border: Border.all(color: Colors.red),
-         borderRadius: widget.content['border_radius'],
-      ),
-      height: widget.heightOfComponent,
-     child: Center(
-    
-        child: Text(
-          widget.content['label'],
-          style: GoogleFonts.onest(
-            color:Colors.black,
-            fontSize:30,
-            fontWeight: FontWeight.bold,
-          ),
-        
+        padding: EdgeInsets.all(widget.content['padding']),
+        decoration: BoxDecoration(
+          // border: Border.all(color: Colors.red),
+          borderRadius: widget.content['border_radius'],
         ),
-      )
-    );
+        height: widget.heightOfComponent,
+        child: Center(
+          child: Text(
+            widget.content['label'],
+            style: GoogleFonts.onest(
+              color: Colors.black,
+              fontSize: 30,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        ));
   }
 }
+
 class CustomTableBody extends StatefulWidget {
   final dynamic content;
   final double heightOfComponent;
@@ -74,6 +71,64 @@ class CustomTableBody extends StatefulWidget {
 class _CustomTableBodyState extends State<CustomTableBody> {
   @override
   Widget build(BuildContext context) {
-    return Placeholder();
+    return Column(
+      children: List<dynamic>.from(widget.content['items'])
+          .asMap()
+          .entries
+          .map((entry) {
+        int index = entry.key;
+        dynamic element = entry.value;
+        return Container(
+          decoration: BoxDecoration(
+            border: Border.all(color: Colors.black),
+            borderRadius: widget.content['border_radius'],
+          ),
+          child: Row(
+            children: [
+              Container(
+                decoration: const BoxDecoration(
+                  border: Border(
+                    right: BorderSide(color: Colors.black),
+                  ),
+                ),
+                alignment: Alignment.center,
+                width: 50,
+                height: 50,
+                child: Text(
+                  (index + 1).toString(),
+                  style: GoogleFonts.onest(
+                    color: Colors.black,
+                    fontSize: 25,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+              Container(
+                child: Row(
+                  children: [
+                    Container(
+                      margin: EdgeInsets.symmetric(horizontal: 10),
+                      child: Image(image: element['flag_icon']),
+                    ),
+                    Container(
+                      margin: EdgeInsets.symmetric(horizontal: 10),
+                    ),
+                    Container(
+                        child: Text(
+                      element['team_name'],
+                      style: GoogleFonts.onest(
+                        color: Colors.black,
+                        fontSize: 25,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ))
+                  ],
+                ),
+              )
+            ],
+          ),
+        );
+      }).toList(),
+    );
   }
 }
